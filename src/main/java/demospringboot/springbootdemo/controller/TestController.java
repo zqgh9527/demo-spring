@@ -1,6 +1,7 @@
 package demospringboot.springbootdemo.controller;
 
 
+import demospringboot.springbootdemo.common.GlobalConfig;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,6 +18,7 @@ public class TestController
 		result.put("test1", "AAAAAAAAAA");
 		result.put("test2", "BBBBBBBBBB");
 		result.put("test3", "CCCCCCCCCC");
+		result.put("环境", GlobalConfig.getEnv());
 		return result;
 	}
 }

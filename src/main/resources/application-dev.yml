@@ -1,0 +1,145 @@
+server:
+  port: 80
+  #servlet:
+    #应用上下文
+    #context-path: /shibo
+
+spring:
+  servlet:
+    #限制上传附件大小
+    multipart:
+      enabled: true
+      max-file-size: 1000MB
+      max-request-size: 2000MB
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+  application:
+    name: PPS-AIOA-SHIBO
+  main:
+    allow-bean-definition-overriding: true
+  #thymelea模板配置
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML5
+    encoding: UTF-8
+    cache: false
+    enabled: true
+    servlet:
+      content-type: text/html
+      multipart:
+        enabled: true
+        max-file-size: 10MB
+        max-request-size: 10MB
+
+  #redis配置
+  redis:
+    host: 10.220.251.41
+    password: qwer1234
+    port: 6379
+    database: 0
+  #druid数据源
+  datasource:
+    driver-class-name: dm.jdbc.driver.DmDriver
+    druid:
+      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+      filters: stat,wall
+      initial-size: 5
+      maxActive: 20
+      maxPoolPreparedStatementPerConnectionSize: 20
+      maxWait: 60000
+      min-idle: 5
+      minEvictableIdleTimeMillis: 300000
+      poolPreparedStatements: true
+      stat-view-servlet:
+        allow: 127.0.0.1,10.220.251.30
+        deny: 192.168.1.1
+        login-password: 123456
+        login-username: admin
+        reset-enable: false
+        url-pattern: /druid/*
+      testOnBorrow: false
+      testOnReturn: false
+      testWhileIdle: true
+      timeBetweenEvictionRunsMillis: 60000
+      validationQuery: SELECT 'Test'
+      web-stat-filter:
+        enabled: true
+        exclusions: '*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*'
+        url-pattern: /*
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:dm://10.220.251.31:5250
+    username: EXPO
+    password: gumis2017dev
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  jmx:
+    default-domain: ${spring.application.name}
+# mybatis-plus
+mybatis-plus:
+  typeAliasesPackage: com.pps.aioa.dlcd.model
+  mapper-locations: classpath:/mapper/**/*.xml
+  global-config:
+    field-strategy: 1
+    db-column-underline: true
+    refresh-mapper: true
+    id-type: 3
+  configuration:
+    cache-enabled: true
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# mybatis分页插件
+pagehelper:
+  helperDialect: postgresql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+  returnPageInfo: check
+
+#sso  拦截接口
+sso:
+  signOnUrl: http://10.220.251.41:2001/sso/signOn
+  signOutUrl: http://10.220.251.41:2001/sso/signOut
+  excludeUrls: /appConfig/*;/viewDownload/*;/comm/interface/*;
+  apiUrl: http://10.220.251.41:2001/sso/api
+
+#配置服务监控
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    enabled-by-default: true
+    web:
+      exposure:
+        include: '*'
+# 配置注册中心，服务发现客户端，视情况配置，不需要服务发现的话请注释掉pom文件中的spring-cloud-starter-netflix-eureka-client这个依赖
+eureka:
+  client:
+    service-url:
+      defaultZone: http://10.220.251.41:1200/serviceRegistry/eureka
+  instance:
+    prefer-ip-address: true
+#配置系统信息，可不配置
+info:
+  app:
+    name: pps-aioa-shibo
+  company:
+    name: www.beyondbit.com
+    #上传附件地址 D:/opt/upload/   /mnt/dlcdData/
+
+  profile: /mnt/dlcdData/
+  #365预览图片ip
+  ip365: 192.68.0.141:8088
+  #环境
+  env: dev
+  #本地ip
+  iplocalhost: 192.68.0.195:80
+    #本地ai全景服务端口和ip
+  aiIp: 10.220.251.31:20000
+  dev:
+    name: luchaochao
