@@ -67,10 +67,10 @@
             <id>dev</id>
             <properties>
                 <env>dev</env>
-            </properties>
+            </properties><!--
             <activation>
                 <activeByDefault>true</activeByDefault>
-            </activation>
+            </activation>-->
         </profile>
     </profiles>
 
