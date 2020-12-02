@@ -63,9 +63,9 @@
         </profile>
         <!--生产环境-->
         <profile>
-            <id>prod</id>
+            <id>pro</id>
             <properties>
-                <profile.active>prod</profile.active>
+                <profile.active>pro</profile.active>
             </properties>
         </profile>
         <!--测试环境-->
