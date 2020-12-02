@@ -73,12 +73,12 @@
     </profiles>
 
     <build>
-        <plugins>
+        <!--<plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-        </plugins>
+        </plugins>-->
         <finalName>
             <!--注意要引用正确的profile.active标签-->
             ${artifactId}-${version}-${profiles.active}
