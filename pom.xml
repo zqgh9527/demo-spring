@@ -58,7 +58,7 @@
             </properties>
             <!--没有mvn指令指定时，默认所属环境-->
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
         </profile>
         <!--生产环境-->
@@ -66,6 +66,9 @@
             <id>pro</id>
             <properties>
                 <profile.active>pro</profile.active>
+                <activation>
+                    <activeByDefault>false</activeByDefault>
+                </activation>
             </properties>
         </profile>
         <!--测试环境-->
