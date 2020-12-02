@@ -72,13 +72,6 @@
             <properties>
                 <profiles.active>dev</profiles.active>
             </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-tomcat</artifactId>
-                    <scope>provided</scope>
-                </dependency>
-            </dependencies>
             <build>
                 <!--打包的名字-->
                 <finalName>thirdapp_dev</finalName>
@@ -90,13 +83,6 @@
             <properties>
                 <profiles.active>pro</profiles.active>
             </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-tomcat</artifactId>
-                    <scope>provided</scope>
-                </dependency>
-            </dependencies>
             <build>
                 <!--打包的名字-->
                 <finalName>thirdapp_pro</finalName>
