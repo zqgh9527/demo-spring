@@ -78,7 +78,7 @@
         </plugins>
         <finalName>
             <!--注意要引用正确的profile.active标签-->
-            ${artifactId}-${version}-${profile.active}
+            ${artifactId}-${version}-${spring.profiles.active}
         </finalName>
     </build>
 
