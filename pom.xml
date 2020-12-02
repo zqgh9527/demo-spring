@@ -56,7 +56,7 @@
                 <profile.active>dev</profile.active>
             </properties>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
         </profile>
         <!--生产环境-->
@@ -66,7 +66,7 @@
                 <profile.active>pro</profile.active>
             </properties>
             <activation>
-                <activeByDefault>false</activeByDefault>
+                <activeByDefault>true</activeByDefault>
             </activation>
         </profile>
     </profiles>
