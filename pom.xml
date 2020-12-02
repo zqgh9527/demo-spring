@@ -13,7 +13,6 @@
     <version>0.0.1</version>
     <name>springbootdemo</name>
     <description>Demo project for Spring Boot</description>
-    <!--<packaging>war</packaging>-->
 
     <properties>
         <java.version>1.8</java.version>
@@ -54,6 +53,7 @@
             <id>dev</id>
             <properties>
                 <profile.active>dev</profile.active>
+                <project.packaging>jar</project.packaging>
             </properties>
             <activation>
                 <activeByDefault>false</activeByDefault>
@@ -64,6 +64,7 @@
             <id>pro</id>
             <properties>
                 <profile.active>pro</profile.active>
+                <project.packaging>war</project.packaging>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
