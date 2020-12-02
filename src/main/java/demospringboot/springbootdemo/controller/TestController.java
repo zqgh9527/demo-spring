@@ -15,7 +15,7 @@ public class TestController
 	public Map<String, String> index()
 	{
 		Map<String, String> result = new HashMap<>();
-		result.put("test1", "AAAAAAAAAA");
+		result.put("test1", "AAAA1111111111111111111111111111111111111111111111AAAAAA");
 		result.put("test2", "BBBBBBBBBB");
 		result.put("test3", "CCCCCCCCCC");
 		result.put("环境", GlobalConfig.getEnv());
