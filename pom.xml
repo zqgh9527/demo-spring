@@ -57,7 +57,7 @@
             </properties>
             <!--没有mvn指令指定时，默认所属环境-->
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
         </profile>
         <!--生产环境-->
