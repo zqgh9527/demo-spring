@@ -66,9 +66,6 @@
             <id>pro</id>
             <properties>
                 <profile.active>pro</profile.active>
-                <activation>
-                    <activeByDefault>false</activeByDefault>
-                </activation>
             </properties>
         </profile>
         <!--测试环境-->
