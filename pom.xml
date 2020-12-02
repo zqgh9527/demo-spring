@@ -11,8 +11,8 @@
     <groupId>demo-springboot</groupId>
     <artifactId>springbootdemo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <!--<name>springbootdemo</name>-->
-    <!--<description>Demo project for Spring Boot</description>-->
+    <name>springbootdemo</name>
+    <description>Demo project for Spring Boot</description>
     <!--<packaging>war</packaging>-->
 
     <properties>
@@ -48,7 +48,6 @@
         </dependency>
     </dependencies>
 
-    <!--	maven多环境打包-->
     <profiles>
         <!--开发环境-->
         <profile>
@@ -58,7 +57,7 @@
             </properties>
             <!--没有mvn指令指定时，默认所属环境-->
             <activation>
-                <activeByDefault>false</activeByDefault>
+                <activeByDefault>true</activeByDefault>
             </activation>
         </profile>
         <!--生产环境-->
@@ -67,16 +66,6 @@
             <properties>
                 <profile.active>pro</profile.active>
             </properties>
-        </profile>
-        <!--测试环境-->
-        <profile>
-            <id>test</id>
-            <properties>
-                <profile.active>test</profile.active>
-            </properties>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
         </profile>
     </profiles>
 
@@ -88,6 +77,7 @@
             </plugin>
         </plugins>
         <finalName>
+            <!--注意要引用正确的profile.active标签-->
             ${artifactId}-${version}-${profile.active}
         </finalName>
     </build>
