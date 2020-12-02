@@ -48,45 +48,20 @@
         </dependency>
     </dependencies>
 
-    <!--<profiles>
-        &lt;!&ndash;开发环境&ndash;&gt;
+    <profiles>
+        <!--开发环境-->
         <profile>
             <id>dev</id>
             <properties>
                 <profile.active>dev</profile.active>
             </properties>
         </profile>
-        &lt;!&ndash;生产环境&ndash;&gt;
+        <!--生产环境-->
         <profile>
             <id>pro</id>
             <properties>
                 <profile.active>pro</profile.active>
             </properties>
-        </profile>
-    </profiles>-->
-
-    <profiles>
-        <profile>
-            <!-- 本地开发环境 -->
-            <id>dev</id>
-            <properties>
-                <profiles.active>dev</profiles.active>
-            </properties>
-            <build>
-                <!--打包的名字-->
-                <finalName>thirdapp_dev</finalName>
-            </build>
-        </profile>
-        <profile>
-            <!-- 开发环境 -->
-            <id>pro</id>
-            <properties>
-                <profiles.active>pro</profiles.active>
-            </properties>
-            <build>
-                <!--打包的名字-->
-                <finalName>thirdapp_pro</finalName>
-            </build>
         </profile>
     </profiles>
 
@@ -97,6 +72,10 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>-->
+        <finalName>
+            <!--注意要引用正确的profile.active标签-->
+            ${artifactId}-${version}-${profiles.active}
+        </finalName>
     </build>
 
 </project>
